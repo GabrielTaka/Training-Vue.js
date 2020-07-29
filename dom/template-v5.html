@@ -1,0 +1,27 @@
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="app">
+  <p v-once> {{titulo}} </p>
+  <p> {{ saudacao() }} </p>
+  <a :href="link"> Google </a>
+</div>
+
+<!-- Sempre em que você não precisar que um dado seja alterado, você pode usar a diretiva v-once, ela faz com que o dado assuma um valor fixo.-->
+<script>
+  new Vue({
+    el: '#app',
+    data: {
+      titulo: 'Olá mundo com VUEJS',
+      link: 'http://google.com.br'
+
+    },
+
+    methods: {
+      saudacao() {
+        this.titulo = 'bom dia!'
+        return this.titulo
+      }
+    }
+  })
+</script>

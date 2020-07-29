@@ -1,0 +1,29 @@
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="app">
+  <p> {{titulo}} </p>
+  <p> {{ saudacao() }} </p>
+  <a :href="link"> Google </a>
+</div>
+<!-- 
+  diretiva = é uma propriedade customizada, ou seja, não é  nativa do html, entretando ele permite que seja adicionada novas propriedades
+-->
+
+<script>
+  new Vue({
+    el: '#app',
+    data: {
+      titulo: 'Olá mundo com VUEJS',
+      link: 'http://google.com.br'
+
+    },
+
+    methods: {
+      saudacao() {
+        console.log( this )
+        return this.titulo
+      }
+    }
+  })
+</script>

@@ -1,0 +1,28 @@
+<meta charset="UTF-8" />
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="app">
+  <ul> 
+    <li v-for="(pessoa, i) in pessoas" :key="i">
+      <!-- {{pessoa.nome}} {{i}} -->
+      <div v-for="valor in pessoa"> {{valor}} </div>
+    </li>
+  </ul>
+
+
+
+
+<script>
+  new Vue({
+    el: '#app',
+    data: { 
+      cores: ['vermelho', 'verde', 'amarelo', 'azul'],
+      pessoas: [
+        { nome: 'Giovana', idade: 20 , peso: 59 },
+        { nome: 'Gabriel', idade: 22 , peso: 68 },
+      ]
+
+    },
+  })
+</script>

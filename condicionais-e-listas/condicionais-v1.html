@@ -1,0 +1,25 @@
+<meta charset="UTF-8" />
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="app">
+  <p> Usuário Logado: {{nome}} </p>
+  <p> Nenhum usuário logado </p>
+
+</div>
+
+<script>
+  new Vue({
+    el: '#app',
+    data: {
+      nome: 'Gabriel',
+      logado: false
+    },
+
+    methods: {
+      somar() {
+        this.contador++
+      }
+    }
+  })
+</script>

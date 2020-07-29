@@ -1,0 +1,38 @@
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="app">
+  <button @click="aumentar"> Aumentar </button>
+  <button @click="contador2++"> Aumentar 2</button>
+  <button @click="diminuir"> Diminuir </button>
+  <p> Contador: {{ contador }} | {{contador2}}</p>
+  <p> Resultado: {{ resultado }}</p>
+</div>
+
+<script>
+  new Vue({
+    el: '#app',
+    data: {
+      contador: 0,
+      contador2: 0,
+    },  
+
+    computed: {
+      resultado() {
+        console.log("Só é chamado quando propriedades que afetam o return é alterado no template")
+        return this.contador >= 5 ? 'Contador é maior ou igual a cinco' : 'Contador é menor que cinco'
+      }
+    },
+
+    methods: {
+      aumentar() {
+        this.contador++
+      },
+
+      diminuir() {
+        this.contador--
+      },
+    }
+    
+  })
+</script>
